@@ -24,6 +24,7 @@ import { ReportComponent } from './report/report.component';
     CommonModule,
     routing,
     FormsModule,
+    HttpModule,
     HttpModule
   ],
   providers: [],
