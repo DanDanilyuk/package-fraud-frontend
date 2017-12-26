@@ -1,6 +1,16 @@
 <h3>
   Please fill out form to check Address
 </h3>
+<div *ngIf="data">
+  <h1>Message: {{ data.message }}</h1>
+  <h3>Street: {{ data.street }}</h3>
+  <h3>City: {{ data.city }}</h3>
+  <h3>State: {{ data.state }}</h3>
+  <h3>Zip: {{ data.zip }}</h3>
+  <h3>Safety Level: {{ data.safety_level }}</h3>
+  <h3>Reports: {{ data.reports }}</h3>
+  <h3>Orders Checked: {{ data.orders_checked }}</h3>
+</div>
 <div class="card">
   <div class="card-header">
     <h3 class="card-title">Check Address</h3>
@@ -28,7 +38,8 @@
       </div>
 
       <br>
-      <button class="btn btn-success" (click)="submitForm(street.value, city.value, state.value, zip.value)">Check Address</button>
+      <button class="btn btn-success" (click)="submitForm(street.value, city.value, state.value, zip.value); street.value=''; city.value=''; state.value=''; zip.value='';">Check Address</button>
     </div>
+    <button class="btn btn-info" (click)="checkValue()">Check Value</button>
   </div>
 </div>
