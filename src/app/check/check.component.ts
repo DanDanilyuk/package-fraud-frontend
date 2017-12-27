@@ -11,6 +11,7 @@ import { Observable } from 'rxjs/Rx';
 })
 export class CheckComponent implements OnInit {
   public data;
+  public status;
 
   constructor(private checkService: CheckService) { }
 
@@ -18,13 +19,16 @@ export class CheckComponent implements OnInit {
     this.data = this.checkService.checkAddress(street, city, state, zip).subscribe(
     data => { this.data = data},
     err => console.error(err),
-    () => console.log('done loading foods')
+    () => console.log('api call completed')
     );
+    debugger;
+    // $('#check_form').hide();
   }
 
   checkValue() {
-    debugger;
     console.log(this.data);
+    debugger;
+    // $('#check_form').hide();
   }
 
   ngOnInit() {
